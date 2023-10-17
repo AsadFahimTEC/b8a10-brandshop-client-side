@@ -43,9 +43,9 @@ const Navbar = () => {
               {navLinks}
             </ul>
           </div>
-          <p className="normal-case font-montserrat font-bold text-xl">
+          <h6 className="normal-case font-montserrat font-bold text-xl">
             Drinko
-          </p>
+          </h6>
           <div className="ml-4">
           <img className="w-14 h-10 sm:w-16 sm:h-10" src={logo} alt="logo" />
           </div>
