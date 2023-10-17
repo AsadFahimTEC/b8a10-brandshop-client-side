@@ -4,6 +4,7 @@ import Home from "../components/Home";
 import Cart from "../components/shared/Cart";
 import Login from "../components/shared/Login";
 import Product from "../components/shared/Product";
+import ErrorPage from "../components/ErrorPage";
 
 
 
@@ -11,6 +12,7 @@ import Product from "../components/shared/Product";
         {
             path: '/',
             element: <Root></Root>,
+            errorElement: <ErrorPage></ErrorPage>,
     
             children:[
                 {
