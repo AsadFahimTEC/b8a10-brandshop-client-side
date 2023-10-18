@@ -1,9 +1,9 @@
+
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Product = () => {
   const navigate = useNavigate();
-
   const handleAddProduct = (event) => {
     event.preventDefault();
     const form = event.target;
