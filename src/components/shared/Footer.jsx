@@ -15,7 +15,7 @@ const Footer = () => {
         data-aos="flip-left"
         data-aos-easing="ease-out-cubic"
       >
-        <div className="flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 bg-white text-center md:justify-between">
+        <div className="flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 bg-white text-[#333] text-center md:justify-between">
           <p className="normal-case font-montserrat font-bold text-xl">
             Drinko
           </p>
@@ -47,7 +47,7 @@ const Footer = () => {
           </ul>
         </div>
         <hr className="my-8 border-blue-gray-50" />
-        <p className="block font-light font-avenir text-center text-base leading-relaxed text-blue-gray-900 antialiased">
+        <p className="block font-light text-[#333] font-avenir text-center text-base leading-relaxed text-blue-gray-900 antialiased">
           © 2023 Drinko
         </p>
       </footer>

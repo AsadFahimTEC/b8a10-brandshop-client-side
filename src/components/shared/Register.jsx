@@ -120,7 +120,7 @@ const Register = () => {
                   Register
                 </button>
               </div>
-              <p className="text-center font-semibold text-xs mt-4">
+              <p className="text-center text-[#000] font-semibold text-xs mt-4">
                 Already Have An Account ?
                 <Link className="text-[#F75B5F]" to="/login">
                   {" "}

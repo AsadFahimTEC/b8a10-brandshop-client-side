@@ -8,7 +8,9 @@ const Navbar = () => {
 
   // sign out a user
   const handleLogOut = () => {
-    logOut().then().catch();
+    logOut().
+    then().
+    catch();
   };
 
   const navLinks = (
@@ -26,10 +28,10 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-green-300">
+    <div className="navbar bg-green-300 text-blue-900">
       <div className="navbar-start">
         <div className="dropdown">
-          <label tabIndex={0} className="btn btn-ghost lg:hidden">
+          <label tabIndex={0} className="btn btn-ghost text-red-500 lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -47,12 +49,12 @@ const Navbar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu font-avenir menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-blue-300 rounded-box w-52"
+            className="menu font-avenir menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-blue-500 rounded-box w-52"
           >
             {navLinks}
           </ul>
         </div>
-        <h6 className="normal-case font-montserrat font-bold text-xl">
+        <h6 className="normal-case text-[#000] font-montserrat font-bold text-xl">
           Drinko
         </h6>
         <div className="ml-4">
