@@ -5,6 +5,7 @@ import Cart from "../components/shared/Cart";
 import Login from "../components/shared/Login";
 import Product from "../components/shared/Product";
 import ErrorPage from "../components/ErrorPage";
+import PrivateRoutes from "./PrivateRoutes";
 
 
 
@@ -23,7 +24,9 @@ import ErrorPage from "../components/ErrorPage";
                 },   
                 {
                     path: '/product',
-                    element: <Product></Product>,
+                    element: <PrivateRoutes>
+                        <Product></Product>
+                    </PrivateRoutes>,
                    
                 },   
                 {
