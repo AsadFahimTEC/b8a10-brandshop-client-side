@@ -7,6 +7,7 @@ import Product from "../components/shared/Product";
 import ErrorPage from "../components/ErrorPage";
 import PrivateRoutes from "./PrivateRoutes";
 import Register from "../components/shared/Register";
+import Products from "../components/Products";
 
 
 
@@ -28,11 +29,15 @@ import Register from "../components/shared/Register";
                     element: <PrivateRoutes>
                         <Product></Product>
                     </PrivateRoutes>,
+                     loader: () => fetch('http://localhost:5070/products'),
                    
                 },   
                 {
                     path: '/cart',
-                    element: <Cart></Cart>,
+                    element: <PrivateRoutes>
+                        <Cart></Cart>
+                        </PrivateRoutes>,
+                    loader: () => fetch('http://localhost:5070/products'),
                    
                 },   
                 {
@@ -45,6 +50,11 @@ import Register from "../components/shared/Register";
                     element: <Register></Register>,
                    
                 },   
+                {
+                    path: '/products',
+                    element: <Products></Products>,
+                    loader: () => fetch('http://localhost:5070/products')
+                }
                 
             ] 
            

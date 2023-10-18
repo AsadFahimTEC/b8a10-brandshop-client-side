@@ -31,6 +31,7 @@ const Register = () => {
       .then((result) => {
         updateProfiles(name, photo);
         console.log(result.user);
+        // new product created for server side here
         navigate("/");
         return toast.success("user created successfully");
       })

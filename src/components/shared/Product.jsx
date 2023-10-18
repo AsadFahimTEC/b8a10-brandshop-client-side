@@ -1,5 +1,9 @@
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Product = () => {
+  const navigate = useNavigate();
+
   const handleAddProduct = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -11,7 +15,32 @@ const Product = () => {
     const description = form.description.value;
     const rating = form.rating.value;
     console.log(name, brandname, photo, type, price, description, rating);
+
+    // new product added in the server side
+    const product = {name, brandname, photo, type, price, description, rating};
+
+  fetch("http://localhost:5070/products", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(product),
+    })
+      .then((res) => res.json())
+      .then(data => {
+        console.log(data);
+        if(data.insertedId){
+          Swal.fire({
+            title: 'success',
+            text: 'Product Added Successfully',
+            icon: 'success',
+            confirmButtonText: 'Cool'
+          })
+          navigate('/products');
+        }
+    })
   };
+
   return (
     <div>
       <div className="mt-3 hero min-h-screen bg-base-200">
@@ -26,7 +55,7 @@ const Product = () => {
                   type="text"
                   name="name"
                   placeholder="name"
-                  className="input input-bordered"
+                  className="input input-bordered text-black"
                   required
                 />
               </div>
@@ -38,7 +67,7 @@ const Product = () => {
                   type="text"
                   name="brandname"
                   placeholder="brandname"
-                  className="input input-bordered"
+                  className="input input-bordered text-black"
                   required
                 />
               </div>
@@ -50,7 +79,7 @@ const Product = () => {
                   type="text"
                   name="photo"
                   placeholder="photo"
-                  className="input input-bordered"
+                  className="input input-bordered text-black"
                   required
                 />
               </div>
@@ -60,7 +89,7 @@ const Product = () => {
                 </label>
                 <select
                   name="type"
-                  className="select select-bordered"
+                  className="select select-bordered text-black"
                   required
                 >
                   <option value="">Select a Brand</option>
@@ -81,7 +110,7 @@ const Product = () => {
                   type="number"
                   name="price"
                   placeholder="price"
-                  className="input input-bordered"
+                  className="input input-bordered text-black"
                   required
                 />
               </div>
@@ -93,7 +122,7 @@ const Product = () => {
                   type="text"
                   name="description"
                   placeholder="description"
-                  className="input input-bordered"
+                  className="input input-bordered text-black"
                   required
                 />
               </div>
