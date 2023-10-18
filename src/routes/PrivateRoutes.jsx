@@ -1,12 +1,23 @@
-import { Navigate } from "react-router-dom";
 
+import { useContext } from "react";
+import { Navigate, useLocation } from "react-router-dom";
+import { AuthContext } from "../Hook/AuthProvider";
 
-const PrivateRoutes = ({children}) => {
-    if(user){
-        return children;
-    }
+const PrivateRoutes = ({ children }) => {
+  const { user, loading } = useContext(AuthContext);
+  const location = useLocation();
+  console.log(location.pathname);
 
-    return <Navigate to="/login"></Navigate>
+  // logged in user page reload problem solve
+  if (loading) {
+    return <span className="loading loading-spinner text-secondary"></span>;
+  }
+
+  if (user) {
+    return children;
+  }
+
+  return <Navigate state={location.pathname} to="/login"></Navigate>;
 };
 
 export default PrivateRoutes;
