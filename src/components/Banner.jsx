@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 const Banner = () => {
       // initialized aos package
   useEffect(() =>{
-    Aos.init({duration: 1000});
+    Aos.init({duration: 500});
   }, [])
 
     return (

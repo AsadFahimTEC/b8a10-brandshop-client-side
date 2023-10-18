@@ -1,0 +1,51 @@
+[
+    {
+      "id": 1,
+      "name": "COKE",
+      "title": "Coca-Cola",
+      "price": "1.40",
+      "discount": "2",
+      "image": "https://i.ibb.co/0FPj0Jn/photo-1624552184280-9e9631bbeee9.png"
+    },
+    {
+      "id": 2,
+      "name": "MCDONALD'S",
+      "title": "Fries",
+      "price": "1.50",
+      "discount": "3.50",
+      "image": "https://i.ibb.co/xF7t2Xt/photo-1596769968821-6d3bf5e8f50a-auto-format-fit-max-q-80-crop-faces-edges-cs-tinysrgb-fm-jpg-ixid-M.jpg"
+    },
+    {
+      "id": 3,
+      "name": "STARBUGS",
+      "title": "Coffe Cup",
+      "price": "14",
+      "discount": "26",
+      "image": "https://i.ibb.co/kJG3vZN/photo-1592321675774-3de57f3ee0dc-auto-format-fit-max-q-80-crop-faces-edges-cs-tinysrgb-fm-jpg-ixid-M.jpg"
+    },
+    {
+      "id": 4,
+      "name": "PEPSICO",
+      "title": "Pepsi",
+      "price": "1.25",
+      "discount": "2.40",
+      "image": "https://i.ibb.co/k0M2CbR/photo-1553456558-aff63285bdd1-auto-format-fit-max-q-80-crop-faces-edges-cs-tinysrgb-fm-jpg-ixid-M3wx.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Nestlé",
+      "title": "Kitkat Chocolate",
+      "price": "0.80",
+      "discount": "1.99",
+      "image": "https://i.ibb.co/HdfRPXG/photo-1574183878891-e08ec44abc37-auto-format-fit-max-q-80-crop-faces-edges-cs-tinysrgb-fm-jpg-ixid-M.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Kellogg's",
+      "title": "Corn Flakes",
+      "price": "3.20",
+      "discount": "5.70",
+      "image": "https://i.ibb.co/Xb6fFgp/photo-1624798911782-f3766deb4aec-auto-format-fit-max-q-80-crop-faces-edges-cs-tinysrgb-fm-jpg-ixid-M.jpg"
+    }
+  ]
+  

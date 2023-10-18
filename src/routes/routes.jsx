@@ -18,6 +18,7 @@ import ErrorPage from "../components/ErrorPage";
                 {
                     path: '/',
                     element: <Home></Home>,
+                    loader: () =>fetch('/brand.json')
                    
                 },   
                 {

@@ -1,5 +1,5 @@
 import Banner from "./Banner";
-import Cards from "./Cards";
+import Brand from "./Brand";
 import ContactUs from "./shared/ContactUs";
 import Works from "./shared/Works";
 
@@ -9,7 +9,7 @@ const Home = () => {
     return (
         <div>
           <Banner></Banner>
-          <Cards></Cards>
+          <Brand></Brand>
           <Works></Works>
           <ContactUs></ContactUs>
         </div>

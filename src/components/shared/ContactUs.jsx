@@ -4,12 +4,12 @@ import { useEffect } from "react";
 
 const ContactUs = () => {
   useEffect(() => {
-    Aos.init({ duration: 1000 });
+    Aos.init({ duration: 500 });
   }, []);
 
   return (
     <div className="mt-2" data-aos="zoom-in-up">
-      <body className="bg-gray-800 text-gray-100 px-8 py-12">
+      <div className="bg-gray-800 text-gray-100 px-8 py-12">
         <div className="text-center w-full">
           <h2 className="text-4xl font-bold">Contact US</h2>
         </div>
@@ -28,7 +28,7 @@ const ContactUs = () => {
               <svg
                 className="w-full"
                 xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
                 id="ae37f038-3a9e-4b82-ad68-fc94ba16af2a"
                 data-name="Layer 1"
                 viewBox="0 0 1096 574.74"
@@ -42,9 +42,9 @@ const ContactUs = () => {
                     y2="560.46"
                     gradientUnits="userSpaceOnUse"
                   >
-                    <stop offset="0" stop-color="gray" stop-opacity="0.25" />
-                    <stop offset="0.54" stop-color="gray" stop-opacity="0.12" />
-                    <stop offset="1" stop-color="gray" stop-opacity="0.1" />
+                    <stop offset="0" stopColor="gray" stopOpacity="0.25" />
+                    <stop offset="0.54" stopColor="gray" stopOpacity="0.12" />
+                    <stop offset="1" stopColor="gray" stopOpacity="0.1" />
                   </linearGradient>
                   <pattern
                     id="ad310e25-2b04-44c8-bb7b-982389166780"
@@ -113,7 +113,7 @@ const ContactUs = () => {
                     y1="660.68"
                     x2="462.91"
                     y2="559.69"
-                    xlink:href="#eb6c86d6-45fa-49e0-9a60-1b0612516196"
+                    xlinkHref="#eb6c86d6-45fa-49e0-9a60-1b0612516196"
                   />
                 </defs>
                 <title>Contact US</title>
@@ -418,8 +418,8 @@ const ContactUs = () => {
                   transform="translate(-52 -162.63)"
                   fill="none"
                   stroke="#3f3d56"
-                  stroke-miterlimit="10"
-                  stroke-width="4"
+                  strokeMiterlimit="10"
+                  strokeWidth="4"
                 />
                 <path
                   d="M750.45,545.85a12.31,12.31,0,0,0-6.15-10.09l-2.76,5.45.09-6.6a12.31,12.31,0,1,0,8.82,11.24Z"
@@ -466,8 +466,8 @@ const ContactUs = () => {
                   transform="translate(-52 -162.63)"
                   fill="none"
                   stroke="#3f3d56"
-                  stroke-miterlimit="10"
-                  stroke-width="4"
+                  strokeMiterlimit="10"
+                  strokeWidth="4"
                 />
                 <path
                   d="M140.45,473.85a12.31,12.31,0,0,0-6.15-10.09l-2.76,5.45.09-6.6a12.31,12.31,0,1,0,8.82,11.24Z"
@@ -514,8 +514,8 @@ const ContactUs = () => {
                   transform="translate(-52 -162.63)"
                   fill="none"
                   stroke="#3f3d56"
-                  stroke-miterlimit="10"
-                  stroke-width="4"
+                  strokeMiterlimit="10"
+                  strokeWidth="4"
                 />
                 <path
                   d="M478.39,391.49a12.3,12.3,0,0,1,6.14-10.09l2.76,5.45-.08-6.6a12.62,12.62,0,0,1,4.05-.49,12.31,12.31,0,1,1-12.87,11.73Z"
@@ -722,7 +722,7 @@ const ContactUs = () => {
                   transform="translate(-52 -162.63)"
                   fill="none"
                   stroke="#000"
-                  stroke-miterlimit="10"
+                  strokeMiterlimit="10"
                   opacity="0.1"
                 />
                 <path
@@ -745,8 +745,8 @@ const ContactUs = () => {
                   transform="translate(-52 -162.63)"
                   fill="none"
                   stroke="#3f3d56"
-                  stroke-miterlimit="10"
-                  stroke-width="4"
+                  strokeMiterlimit="10"
+                  strokeWidth="4"
                 />
                 <path
                   d="M922.52,469.93a12.29,12.29,0,0,0-6.14-10.08l-2.76,5.45.08-6.6a12.08,12.08,0,0,0-4.05-.49,12.31,12.31,0,1,0,12.87,11.72Z"
@@ -793,8 +793,8 @@ const ContactUs = () => {
                   transform="translate(-52 -162.63)"
                   fill="none"
                   stroke="#3f3d56"
-                  stroke-miterlimit="10"
-                  stroke-width="4"
+                  strokeMiterlimit="10"
+                  strokeWidth="4"
                 />
                 <path
                   d="M1081.52,621.93a12.29,12.29,0,0,0-6.14-10.08l-2.76,5.45.08-6.6a12.08,12.08,0,0,0-4-.49,12.31,12.31,0,1,0,12.87,11.72Z"
@@ -1015,7 +1015,7 @@ const ContactUs = () => {
             </div>
           </div>
         </div>
-      </body>
+      </div>
     </div>
   );
 };
