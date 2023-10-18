@@ -6,6 +6,7 @@ import Login from "../components/shared/Login";
 import Product from "../components/shared/Product";
 import ErrorPage from "../components/ErrorPage";
 import PrivateRoutes from "./PrivateRoutes";
+import Register from "../components/shared/Register";
 
 
 
@@ -37,6 +38,11 @@ import PrivateRoutes from "./PrivateRoutes";
                 {
                     path: '/login',
                     element: <Login></Login>,
+                   
+                },   
+                {
+                    path: '/register',
+                    element: <Register></Register>,
                    
                 },   
                 
