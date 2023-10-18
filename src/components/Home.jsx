@@ -1,6 +1,7 @@
 import Banner from "./Banner";
 import Cards from "./Cards";
-import Customers from "./Customers";
+import ContactUs from "./shared/ContactUs";
+import Works from "./shared/Works";
 
 
 
@@ -9,7 +10,8 @@ const Home = () => {
         <div>
           <Banner></Banner>
           <Cards></Cards>
-          <Customers></Customers>
+          <Works></Works>
+          <ContactUs></ContactUs>
         </div>
     );
 };
