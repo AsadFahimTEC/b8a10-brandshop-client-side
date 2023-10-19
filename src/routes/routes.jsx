@@ -9,6 +9,7 @@ import PrivateRoutes from "./PrivateRoutes";
 import Register from "../components/shared/Register";
 import Products from "../components/Products";
 import UpdateProduct from "../components/shared/UpdateProduct";
+import ProductDetails from "../components/shared/ProductDetails";
 
 
 
@@ -59,6 +60,12 @@ import UpdateProduct from "../components/shared/UpdateProduct";
                 {
                     path:'/updateproduct',
                     element: <UpdateProduct></UpdateProduct>,
+                },
+                {
+                    path:'/productdetails',
+                    element: <PrivateRoutes>
+                        <ProductDetails></ProductDetails>
+                    </PrivateRoutes>,
                 }
                 
             ] 
