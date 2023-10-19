@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const AllBrand = ({ brand }) => {
   const { id, name, title, image, price, discount } = brand || {};
@@ -5,14 +6,18 @@ const AllBrand = ({ brand }) => {
   return (
     <div className="mt-2">
       <div className="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
-        <a href="#">
+        <div>
           <img
             src={image}
             alt="coc"
             className="h-80 w-72 object-cover rounded-t-xl"
           />
           <div className="px-4 py-3 w-72">
+            <Link to="/products">
+            
             <span className="text-gray-400 mr-3 uppercase text-xs">{name}</span>
+            
+            </Link>
             <p className="text-lg font-bold text-black truncate block capitalize">
               {title}
             </p>
@@ -43,7 +48,7 @@ const AllBrand = ({ brand }) => {
               </div>
             </div>
           </div>
-        </a>
+        </div>
       </div>
     </div>
   );
