@@ -8,6 +8,7 @@ import ErrorPage from "../components/ErrorPage";
 import PrivateRoutes from "./PrivateRoutes";
 import Register from "../components/shared/Register";
 import Products from "../components/Products";
+import UpdateProduct from "../components/shared/UpdateProduct";
 
 
 
@@ -25,7 +26,7 @@ import Products from "../components/Products";
                    
                 },   
                 {
-                    path: '/product',
+                    path: '/addproduct',
                     element: <PrivateRoutes>
                         <Product></Product>
                     </PrivateRoutes>,
@@ -54,6 +55,10 @@ import Products from "../components/Products";
                     path: '/products',
                     element: <Products></Products>,
                     loader: () => fetch('http://localhost:5070/products')
+                },
+                {
+                    path:'/updateproduct',
+                    element: <UpdateProduct></UpdateProduct>,
                 }
                 
             ] 
