@@ -73,68 +73,7 @@ const router = createBrowserRouter([
   },
 ]);
 
-<<<<<<< HEAD
-export default router;
-=======
-    const router = createBrowserRouter([
-        {
-            path: '/',
-            element: <Root></Root>,
-            errorElement: <ErrorPage></ErrorPage>,
-    
-            children:[
-                {
-                    path: '/',
-                    element: <Home></Home>,
-                    loader: () =>fetch('/brand.json')
-                   
-                },   
-                {
-                    path: '/addproduct',
-                    element: <PrivateRoutes>
-                        <Product></Product>
-                    </PrivateRoutes>,
-                     loader: () => fetch('http://localhost:5070/products'),
-                   
-                },   
-                {
-                    path: '/cart',
-                    element: <PrivateRoutes>
-                        <Cart></Cart>
-                        </PrivateRoutes>,
-                    loader: () => fetch('http://localhost:5070/products'),
-                   
-                },   
-                {
-                    path: '/login',
-                    element: <Login></Login>,
-                   
-                },   
-                {
-                    path: '/register',
-                    element: <Register></Register>,
-                   
-                },   
-                {
-                    path: '/products',
-                    element: <Products></Products>,
-                    loader: () => fetch('http://localhost:5070/products')
-                },
-                {
-                    path:'/updateproduct',
-                    element: <UpdateProduct></UpdateProduct>,
-                },
-                {
-                    path:'/productdetails',
-                    element: <PrivateRoutes>
-                        <ProductDetails></ProductDetails>
-                    </PrivateRoutes>,
-                }
-                
-            ] 
-           
-        }
-    ])
 
- export default router;
->>>>>>> c16d40e9540765eaf3f0ba0c292486ec2c039f13
+export default router;
+
+    
