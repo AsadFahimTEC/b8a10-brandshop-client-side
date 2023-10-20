@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import {Link, useParams} from "react-router-dom";
+import Sliders from "./Slider";
 
 const Products = () => {
   const params = useParams();
@@ -10,13 +11,17 @@ const Products = () => {
   console.log(products);
 
   useEffect(() => {
-    fetch(`http://localhost:5070/brands/${id}`)
+    fetch(`https://b8-a10-brand-shop-server-side-fxcc6829t.vercel.app/brands/${id}`)
       .then((res) => res.json())
       .then((result) => setProducts(result));
   }, []);
 
   return (
-    <div className="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5">
+    <div className="mt-10">
+      <Sliders></Sliders>
+      <div>
+      <div className="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5">
+      
       {products?.map((item) => (
         <div key={item?._id} className="mt-2">
           <div className="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
@@ -57,6 +62,10 @@ const Products = () => {
         </div>
       ))}
     </div>
+      </div>
+    </div>
+    
+ 
   );
 };
 

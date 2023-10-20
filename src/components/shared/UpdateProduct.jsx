@@ -10,7 +10,7 @@ const UpdateProduct = () => {
   const {id} = params;
 
   useEffect(() => {
-    fetch(`http://localhost:5070/products/${id}`)
+    fetch(`http://b8-a10-brand-shop-server-side-fxcc6829t.vercel.app/products/${id}`)
       .then((res) => {
         if (!res.ok) {
           throw new Error(`HTTP error! Status: ${res.status}`);
@@ -37,17 +37,17 @@ const UpdateProduct = () => {
     // new product added in the server side
     const product = {name, brandname, photo, type, price, rating};
 
-    fetch(`http://localhost:5070/products/${id}`, {
+    fetch(`http://b8-a10-brand-shop-server-side-fxcc6829t.vercel.app/products/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(product),
     })
-      .then((res) => res.json())
-      .then((data) => {
+      .then(res => res.json())
+      .then(data => {
         console.log(data);
-        if (data.modifiedId) {
+        if (data.modifiedCount>0) {
           Swal.fire({
             title: "success",
             text: "Product Updated Successfully",
