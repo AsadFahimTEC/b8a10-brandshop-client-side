@@ -22,7 +22,7 @@ const Footer = () => {
           <ul className="flex flex-wrap items-center gap-y-2 gap-x-8">
             <li>
               <Link
-                to="/product"
+                to="/addproduct"
                 className="block font-avenir text-base font-normal leading-relaxed text-blue-gray-900 antialiased transition-colors hover:text-green-500 focus:text-green-500"
               >
                 Add Product

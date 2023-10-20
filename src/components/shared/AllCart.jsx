@@ -1,51 +1,40 @@
-import { useState } from "react";
-import { Link, useLoaderData, useNavigate } from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import Swal from "sweetalert2";
 
-const AllCart = ({cart}) => {
-    const {_id, name, brandname, photo, price} = cart || {};
-    const loadedProducts = useLoaderData();
-    const [products, setProducts] = useState(loadedProducts);
-    const navigate = useNavigate();
-  
-    const handleDeleteProduct = (id) =>{
-      fetch(`http://localhost:5070/products/${id}`, {
-        method: 'DELETE',
+const AllCart = ({cart, setUpdated}) => {
+  const {_id, name, brandname, photo, price} = cart || {};
+  const navigate = useNavigate();
+
+  const handleDeleteProduct = (id) => {
+    fetch(`http://localhost:5070/products/${id}`, {
+      method: "DELETE",
     })
-    .then(res => res.json())
-    .then(data =>{
+      .then((res) => res.json())
+      .then((data) => {
         console.log(data);
-        if(data.deletedCount > 0){
-            Swal.fire({
-                title: 'Are you sure?',
-                text: "You won't be able to revert this!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, delete it!'
-              }).then((result) => {
-                if (result.isConfirmed) {
-                  Swal.fire(
-                    'Deleted!',
-                    'Your file has been deleted.',
-                    'success'
-                  )
-                }
-                navigate('/cart')
-              })
+        if (data.deletedCount > 0) {
+          Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!",
+          }).then((result) => {
+            if (result.isConfirmed) {
+              setUpdated(true);
+              Swal.fire("Deleted!", "Your file has been deleted.", "success");
+            }
+            navigate("/cart");
+          });
         }
-    // remove the product from the UI
-    const remainingProducts = products.filter((product) => product._id !== id);
-    setProducts(remainingProducts);
-    })
-    
-  }
-    return (
-        <div>
-             <div className="mt-2">
-      <div className="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
-        
+      });
+  };
+  return (
+    <div>
+      <div className="mt-2">
+        <div className="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
           <img
             src={photo}
             alt="coc"
@@ -63,16 +52,21 @@ const AllCart = ({cart}) => {
 
               <div className="ml-auto bg-green-500">
                 <div>
-             <Link>
-             <button onClick={() => handleDeleteProduct(cart._id)} className='bg-[green] hover:bg-[red] font-avenir text-[white] rounded px-5 py-2'>Delete</button></Link>
-             </div>
+                  <Link>
+                    <button
+                      onClick={() => handleDeleteProduct(cart._id)}
+                      className="bg-[green] hover:bg-[red] font-avenir text-[white] rounded px-5 py-2">
+                      Delete
+                    </button>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
+        </div>
       </div>
     </div>
-        </div>
-    );
+  );
 };
 
 export default AllCart;
