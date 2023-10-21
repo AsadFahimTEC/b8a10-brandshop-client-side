@@ -5,7 +5,7 @@ import { useLoaderData } from "react-router-dom";
 const BrandName = () => {
     const brandname = useLoaderData();
     console.log(brandname);
-//     const [products, setProducts] = useState([])
+    // const [products, setProducts] = useState([])
 
 //     useEffect(() => {
 //         fetch(`http://localhost:5070/getproducts/${brandname}`)

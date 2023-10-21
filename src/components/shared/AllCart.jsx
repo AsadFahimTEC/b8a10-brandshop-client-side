@@ -6,7 +6,7 @@ const AllCart = ({cart, setUpdated}) => {
   const navigate = useNavigate();
 
   const handleDeleteProduct = (id) => {
-    fetch(`https://b8-a10-brand-shop-server-side-fxcc6829t.vercel.app/products/${id}`, {
+    fetch(`https://b8-a10-brand-shop-server-side-gold.vercel.app/products/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

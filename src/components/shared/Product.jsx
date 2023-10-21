@@ -8,7 +8,7 @@ const Product = () => {
   const [brands, setBrands] = useState(null);
 
   useEffect(() => {
-    fetch("https://b8-a10-brand-shop-server-side-fxcc6829t.vercel.app/brands")
+    fetch("https://b8-a10-brand-shop-server-side-gold.vercel.app/brands")
       .then((res) => res.json())
       .then((data) => setBrands(data));
   }, []);
@@ -40,7 +40,7 @@ const Product = () => {
     };
 
     console.log(product);
-    fetch("https://b8-a10-brand-shop-server-side-fxcc6829t.vercel.app", {
+    fetch("https://b8-a10-brand-shop-server-side-gold.vercel.app/products", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

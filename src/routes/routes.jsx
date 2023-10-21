@@ -21,7 +21,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("https://b8-a10-brand-shop-server-side-fxcc6829t.vercel.app/brands"),
+        loader: () => fetch("https://b8-a10-brand-shop-server-side-gold.vercel.app/brands"),
       },
       {
         path: "/addproduct",
@@ -30,7 +30,7 @@ const router = createBrowserRouter([
             <Product></Product>
           </PrivateRoutes>
         ),
-        loader: () => fetch("https://b8-a10-brand-shop-server-side-fxcc6829t.vercel.app/brands"),
+        loader: () => fetch("https://b8-a10-brand-shop-server-side-gold.vercel.app/brands"),
       },
       {
         path: "/cart",
@@ -60,7 +60,7 @@ const router = createBrowserRouter([
             <UpdateProduct></UpdateProduct>
           </PrivateRoutes>
         ),
-        // loader: () => fetch("https://b8-a10-brand-shop-server-side-fxcc6829t.vercel.app/products"),
+        loader: ({params}) => fetch(`http://localhost:5070/products/${params.id}`),
       },
       {
         path: "/productdetails",

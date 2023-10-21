@@ -1,43 +1,28 @@
-import {useEffect, useState} from "react";
-import {useNavigate, useParams} from "react-router-dom";
+
+import {useLoaderData, useNavigate} from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateProduct = () => {
-  const [defaultData, setDefaultData] = useState(null);
-
-  const params = useParams();
-
-  const {id} = params;
-
-  useEffect(() => {
-    fetch(`http://b8-a10-brand-shop-server-side-fxcc6829t.vercel.app/products/${id}`)
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error(`HTTP error! Status: ${res.status}`);
-        }
-        return res.json();
-      })
-      .then((data) => setDefaultData(data));
-  }, [id]);
-
-  console.log(defaultData);
-
+  const products = useLoaderData();
+  console.log(products);
+  const {_id,name, photo, type, price, rating } = products;
+  // const defaultType = type;
   const navigate = useNavigate();
   const handleUpdateProduct = (event) => {
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
-    const brandname = form.brandname.value;
     const photo = form.photo.value;
     const type = form.type.value;
     const price = form.price.value;
     const rating = form.rating.value;
-    console.log(name, brandname, photo, type, price, rating);
+    console.log(name, photo, type, price, rating);
 
     // new product added in the server side
-    const product = {name, brandname, photo, type, price, rating};
+    const product = {name, photo, type, price, rating};
+    console.log(product);
 
-    fetch(`http://b8-a10-brand-shop-server-side-fxcc6829t.vercel.app/products/${id}`, {
+    fetch(`http://localhost:5070/products/${_id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -54,7 +39,7 @@ const UpdateProduct = () => {
             icon: "success",
             confirmButtonText: "Cool",
           });
-          navigate("/products");
+          navigate('/cart');
         }
       });
   };
@@ -73,24 +58,24 @@ const UpdateProduct = () => {
                   type="text"
                   name="name"
                   placeholder="name"
-                  defaultValue={defaultData?.name}
+                  defaultValue={name}
                   className="input input-bordered text-black"
                   required
                 />
               </div>
-              <div className="form-control">
+              {/* <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Brand Name</span>
+                  <span className="label-text">Description</span>
                 </label>
                 <input
                   type="text"
-                  name="brandname"
-                  defaultValue={`brandname`}
-                  placeholder="brandname"
+                  name="description"
+                  defaultValue={description}
+                  placeholder="description"
                   className="input input-bordered text-black"
                   required
                 />
-              </div>
+              </div> */}
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Image</span>
@@ -98,7 +83,7 @@ const UpdateProduct = () => {
                 <input
                   type="text"
                   name="photo"
-                  defaultValue={`photo`}
+                  defaultValue={photo}
                   placeholder="photo"
                   className="input input-bordered text-black"
                   required
@@ -109,8 +94,7 @@ const UpdateProduct = () => {
                   <span className="label-text">Type</span>
                 </label>
                 <select
-                  name="type"
-                  defaultValue={`type`}
+                  name="type" defaultValue={type}
                   className="select select-bordered text-black"
                   required>
                   <option value="">Select a Brand</option>
@@ -130,7 +114,7 @@ const UpdateProduct = () => {
                 <input
                   type="number"
                   name="price"
-                  defaultValue={`price`}
+                  defaultValue={price}
                   placeholder="price"
                   className="input input-bordered text-black"
                   required
@@ -144,41 +128,34 @@ const UpdateProduct = () => {
                 <input
                   type="radio"
                   name="rating"
-                  defaultValue={`rating`}
                   value="1"
                   className="mask mask-star-2 bg-orange-400"
                 />
                 <input
                   type="radio"
                   name="rating"
-                  defaultValue={`rating`}
                   value="2"
                   className="mask mask-star-2 bg-orange-400"
-                  checked
                 />
                 <input
                   type="radio"
                   name="rating"
-                  defaultValue={`rating`}
                   value="3"
                   className="mask mask-star-2 bg-orange-400"
                 />
                 <input
                   type="radio"
                   name="rating"
-                  defaultValue={`rating`}
                   value="4"
                   className="mask mask-star-2 bg-orange-400"
                 />
                 <input
                   type="radio"
                   name="rating"
-                  defaultValue={`rating`}
                   value="5"
                   className="mask mask-star-2 bg-orange-400"
                 />
               </div>
-
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Submit</button>
               </div>

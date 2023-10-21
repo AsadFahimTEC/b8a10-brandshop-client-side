@@ -11,7 +11,7 @@ const Cart = () => {
   const email = user?.email;
 
   useEffect(() => {
-    fetch(`https://b8-a10-brand-shop-server-side-pso565nwb.vercel.app/my-cart/${email}`)
+    fetch(`https://b8-a10-brand-shop-server-side-gold.vercel.app/my-cart/${email}`)
       .then((res) => res.json())
       .then((data) => setCart(data));
   }, [email, updated]);

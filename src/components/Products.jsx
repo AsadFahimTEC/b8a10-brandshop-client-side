@@ -11,7 +11,7 @@ const Products = () => {
   console.log(products);
 
   useEffect(() => {
-    fetch(`https://b8-a10-brand-shop-server-side-fxcc6829t.vercel.app/brands/${id}`)
+    fetch(`https://b8-a10-brand-shop-server-side-gold.vercel.app/brands/${id}`)
       .then((res) => res.json())
       .then((result) => setProducts(result));
   }, []);
