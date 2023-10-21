@@ -9,7 +9,7 @@ const Details = () => {
   console.log(detail, id);
   
   useEffect(()=>{
-    fetch(`http://localhost:5070/products/${id}`)
+    fetch(`https://b8-a10-brand-shop-server-side-gold.vercel.app/products/${id}`)
     .then(res =>res.json())
     .then(data =>{
         setDetails(data);

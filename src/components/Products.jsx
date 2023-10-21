@@ -62,7 +62,7 @@ const Products = () => {
             </div>
           </div>
         </div>
-      )):<div><h2 className="text-center text-2xl font-bold font-montserrat text-red-600">No! data found</h2></div>}
+      )):<div><h2 className="text-center text-xl font-bold font-montserrat text-red-600">No! data found</h2></div>}
     </div>
       </div>
     </div>
