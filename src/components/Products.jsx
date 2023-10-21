@@ -49,7 +49,7 @@ const Products = () => {
                     <button className="bg-[red] hover:bg-[blue] font-avenir text-[white] rounded px-5 py-2">
                       Details
                     </button>
-                    <Link to={`/updateproduct/${id}`}>
+                    <Link to={`/updateproduct/${item?._id}`}>
                       <button className="mt-3 bg-[red] hover:bg-[green] font-avenir text-[white] rounded px-5 py-2">
                         Update
                       </button>

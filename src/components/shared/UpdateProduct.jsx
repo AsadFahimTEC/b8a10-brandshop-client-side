@@ -1,12 +1,12 @@
 
+import { useState } from "react";
 import {useLoaderData, useNavigate} from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateProduct = () => {
   const products = useLoaderData();
+  const {_id,name, photo, price, rating } = products;
   console.log(products);
-  const {_id,name, photo, type, price, rating } = products;
-  // const defaultType = type;
   const navigate = useNavigate();
   const handleUpdateProduct = (event) => {
     event.preventDefault();
@@ -39,7 +39,7 @@ const UpdateProduct = () => {
             icon: "success",
             confirmButtonText: "Cool",
           });
-          navigate('/cart');
+          navigate(`/products/${_id}`);
         }
       });
   };
@@ -94,16 +94,16 @@ const UpdateProduct = () => {
                   <span className="label-text">Type</span>
                 </label>
                 <select
-                  name="type" defaultValue={type}
+                  name="type" 
                   className="select select-bordered text-black"
                   required>
                   <option value="">Select a Brand</option>
                   <option value="Coca-Cola">Coca-Cola</option>
-                  <option value="McDonald's">McDonald's</option>
-                  <option value="Starbucks">Starbucks</option>
-                  <option value="PepsiCo">PepsiCo</option>
-                  <option value="Nestlé">Nestlé</option>
-                  <option value="Kellogg's">Kellogg's</option>
+                  <option value="Fries">Fries</option>
+                  <option value="Coffe Cup">Coffe Cup</option>
+                  <option value="Pepsi">Pepsi</option>
+                  <option value="Kitkat Chocolate">Kitkat Chocolate</option>
+                  <option value="Corn Flakes">Corn Flakes</option>
                 </select>
               </div>
 
