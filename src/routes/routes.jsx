@@ -9,7 +9,7 @@ import PrivateRoutes from "./PrivateRoutes";
 import Register from "../components/shared/Register";
 import Products from "../components/Products";
 import UpdateProduct from "../components/shared/UpdateProduct";
-import ProductDetails from "../components/shared/ProductDetails";
+import Details from "../components/Details";
 
 const router = createBrowserRouter([
   {
@@ -60,16 +60,16 @@ const router = createBrowserRouter([
             <UpdateProduct></UpdateProduct>
           </PrivateRoutes>
         ),
-        loader: ({params}) => fetch(`http://localhost:5070/products/${params.id}`),
+        loader: ({params}) => fetch(`https://b8-a10-brand-shop-server-side-gold.vercel.app/products/${params.id}`),
       },
       {
-        path: "/productdetails",
+        path: "/productdetails/:id",
         element: (
           <PrivateRoutes>
-            <ProductDetails></ProductDetails>
+            <Details></Details>
           </PrivateRoutes>
         ),
-        // loader: () => fetch("https://b8-a10-brand-shop-server-side-pso565nwb.vercel.app/products/:id"),
+        // loader: () => fetch("http://localhost:5070/products"),
       },
     ],
   },
